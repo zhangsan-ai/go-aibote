@@ -36,7 +36,7 @@ go-aibote/
 
 ```bash
 # 克隆仓库
-git clone https://github.com/yourusername/go-aibote.git
+git clone https://github.com/zhangsan-ai/go-aibote.git
 
 # 进入项目目录
 cd go-aibote
@@ -55,7 +55,7 @@ package main
 import (
     "fmt"
     "log"
-    "github.com/yourusername/go-aibote/pkg/windowsbot"
+    "github.com/zhangsan-ai/go-aibote/pkg/windowsbot"
 )
 
 func main() {
@@ -107,7 +107,7 @@ package main
 import (
     "fmt"
     "log"
-    "github.com/yourusername/go-aibote/pkg/webbot"
+    "github.com/zhangsan-ai/go-aibote/pkg/webbot"
 )
 
 func main() {
@@ -161,7 +161,7 @@ package main
 import (
     "fmt"
     "log"
-    "github.com/yourusername/go-aibote/pkg/androidbot"
+    "github.com/zhangsan-ai/go-aibote/pkg/androidbot"
 )
 
 func main() {

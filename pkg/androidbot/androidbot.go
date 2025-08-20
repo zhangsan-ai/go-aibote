@@ -1,7 +1,7 @@
 // Package androidbot 提供Android平台自动化的功能和接口
 package androidbot
 
-import "github.com/example/go-aibote/pkg/common"
+import "github.com/zhangsan-ai/go-aibote/pkg/common"
 
 // Task 表示Android设备上的一个任务
 // ID: 任务ID

@@ -1,7 +1,7 @@
 // Package webbot 提供Web平台自动化的功能和接口
 package webbot
 
-import "github.com/example/go-aibote/pkg/common"
+import "github.com/zhangsan-ai/go-aibote/pkg/common"
 
 // WebElement 表示一个网页元素
 // ID: 元素ID

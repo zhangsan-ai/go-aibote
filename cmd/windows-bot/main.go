@@ -4,7 +4,7 @@ package main
 import (
     "fmt"
     "log"
-    "github.com/example/go-aibote/pkg/windowsbot"
+    "github.com/zhangsan-ai/go-aibote/pkg/windowsbot"
 )
 
 func main() {

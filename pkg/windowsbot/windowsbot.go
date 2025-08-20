@@ -1,7 +1,7 @@
 // Package windowsbot 提供Windows平台自动化的功能和接口
 package windowsbot
 
-import "github.com/example/go-aibote/pkg/common"
+import "github.com/zhangsan-ai/go-aibote/pkg/common"
 
 // Rect 表示一个矩形区域，由左上角和右下角坐标组成
 // 用于表示窗口或元素的位置和大小
