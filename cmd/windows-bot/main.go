@@ -4,6 +4,7 @@ package main
 import (
     "fmt"
     "log"
+    "github.com/zhangsan-ai/go-aibote/pkg/common"
     "github.com/zhangsan-ai/go-aibote/pkg/windowsbot"
 )
 
@@ -22,9 +23,15 @@ func main() {
     }
     
     // 定义自动化脚本函数
-    script := func(bot windowsbot.WindowsBot) error {
+    script := func(bot common.Bot) error {
+        // 将通用Bot接口转换为WindowsBot接口
+        windowsBot, ok := bot.(windowsbot.WindowsBot)
+        if !ok {
+            return fmt.Errorf("failed to convert Bot to WindowsBot")
+        }
+        
         // 查询所有窗口句柄
-        windows, err := bot.FindWindows()
+        windows, err := windowsBot.FindWindows()
         if err != nil {
             return fmt.Errorf("failed to find windows: %w", err)
         }
@@ -42,7 +49,7 @@ func main() {
         // 示例：假设找到了一个窗口，尝试获取窗口中的元素信息
         // if len(windows) > 0 {
         //     window := windows[0]
-        //     elementName, err := bot.GetElementName(window.Hwnd, "//button[@id='submit']")
+        //     elementName, err := windowsBot.GetElementName(window.Hwnd, "//button[@id='submit']")
         //     if err != nil {
         //         return fmt.Errorf("failed to get element name: %w", err)
         //     }
@@ -50,7 +57,7 @@ func main() {
         // }
         
         // 关闭驱动程序(可以根据需要选择合适的方法)
-        // err = bot.CloseDriver()
+        // err = windowsBot.CloseDriver()
         // if err != nil {
         //     return fmt.Errorf("failed to close driver: %w", err)
         // }

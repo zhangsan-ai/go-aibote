@@ -239,13 +239,6 @@ func NewWebBot(options ...WebBotOption) (WebBot, error) {
 
 // webBotImpl 是WebBot接口的具体实现
 // 它包含了WebBot的所有实现细节
-// 这个结构体对用户是不可见的，用户只能通过WebBot接口来操作它
-// 这种设计符合信息隐藏原则，将实现细节与接口分离
-// 使得代码更加模块化和可维护
-// 该结构体将在后续实现中包含所有必要的字段和方法
-// 目前这里只定义了结构体的存在，具体实现将在后续添加
-// 注意：这个结构体是私有的，用户无法直接访问它
-// 只能通过NewWebBot函数创建实例并通过WebBot接口操作它
 type webBotImpl struct {
     browserName          BrowserName
     debugPort            int
@@ -256,4 +249,101 @@ type webBotImpl struct {
     implicitWait         float64
     implicitWaitFrequency float64
     // 其他必要的字段将在后续实现中添加
+}
+
+// 实现common.Bot接口的StartServer方法
+func (b *webBotImpl) StartServer(ip string, port int) error {
+    // 实际实现将在后续添加
+    // 这里返回nil作为占位符
+    return nil
+}
+
+// 实现common.Bot接口的StopServer方法
+func (b *webBotImpl) StopServer() error {
+    // 实际实现将在后续添加
+    // 这里返回nil作为占位符
+    return nil
+}
+
+// 实现common.Bot接口的ExecuteScript方法
+func (b *webBotImpl) ExecuteScript(script func(bot common.Bot) error) error {
+    // 直接调用传入的脚本函数
+    return script(b)
+}
+
+// 实现WebBot接口的Goto方法
+func (b *webBotImpl) Goto(url string) error {
+    // 实际实现将在后续添加
+    // 这里返回nil作为占位符
+    return nil
+}
+
+// 实现WebBot接口的FindElement方法
+func (b *webBotImpl) FindElement(selector string) (WebElement, error) {
+    // 实际实现将在后续添加
+    // 这里返回空WebElement和nil作为占位符
+    return WebElement{}, nil
+}
+
+// 实现WebBot接口的FindElements方法
+func (b *webBotImpl) FindElements(selector string) ([]WebElement, error) {
+    // 实际实现将在后续添加
+    // 这里返回空切片和nil作为占位符
+    return []WebElement{}, nil
+}
+
+// 实现WebBot接口的GetTitle方法
+func (b *webBotImpl) GetTitle() (string, error) {
+    // 实际实现将在后续添加
+    // 这里返回空字符串和nil作为占位符
+    return "", nil
+}
+
+// 实现WebBot接口的GetURL方法
+func (b *webBotImpl) GetURL() (string, error) {
+    // 实际实现将在后续添加
+    // 这里返回空字符串和nil作为占位符
+    return "", nil
+}
+
+// 实现WebBot接口的Refresh方法
+func (b *webBotImpl) Refresh() error {
+    // 实际实现将在后续添加
+    // 这里返回nil作为占位符
+    return nil
+}
+
+// 实现WebBot接口的Back方法
+func (b *webBotImpl) Back() error {
+    // 实际实现将在后续添加
+    // 这里返回nil作为占位符
+    return nil
+}
+
+// 实现WebBot接口的Forward方法
+func (b *webBotImpl) Forward() error {
+    // 实际实现将在后续添加
+    // 这里返回nil作为占位符
+    return nil
+}
+
+// 实现WebBot接口的StartShowWait方法
+func (b *webBotImpl) StartShowWait(waitTime float64, intervalTime float64, throwing bool) error {
+    // 实际实现将在后续添加
+    // 这里返回nil作为占位符
+    return nil
+}
+
+// 实现WebBot接口的EndShowWait方法
+func (b *webBotImpl) EndShowWait() error {
+    // 实际实现将在后续添加
+    // 这里返回nil作为占位符
+    return nil
+}
+
+// 实现WebBot接口的GetExtendParam方法
+func (b *webBotImpl) GetExtendParam() (string, error) {
+    // 实际实现将在后续添加
+    // 这里返回空字符串和nil作为占位符
+    return "", nil
 }
