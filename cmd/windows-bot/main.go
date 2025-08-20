@@ -23,8 +23,11 @@ func main() {
     }
     
     // 定义自动化脚本函数
+    // 注意：script函数必须接受common.Bot类型参数才能传递给ExecuteScript方法
+    // 这是因为common.Bot接口定义的ExecuteScript方法要求参数类型为func(bot Bot) error
     script := func(bot common.Bot) error {
-        // 将通用Bot接口转换为WindowsBot接口
+        // 将通用Bot接口转换为WindowsBot接口，以便使用Windows特有的方法
+        // 这是因为ExecuteScript方法是通过common.Bot接口调用的，需要类型转换才能使用特定平台的功能
         windowsBot, ok := bot.(windowsbot.WindowsBot)
         if !ok {
             return fmt.Errorf("failed to convert Bot to WindowsBot")
@@ -81,6 +84,7 @@ func main() {
     }()
     
     // 执行自动化脚本
+    // 注意：这里传递的script函数必须与common.Bot接口中ExecuteScript方法定义的参数类型匹配
     err = bot.ExecuteScript(script)
     if err != nil {
         log.Fatalf("Failed to execute script: %v", err)
